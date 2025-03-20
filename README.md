@@ -8,7 +8,6 @@ A modern currency exchange rate application that provides real-time currency con
 - Support for multiple currencies with country flags
 - Interactive currency conversion with market rates
 - Visual progress indicator for rate updates
-- Responsive design for all device sizes
 - Error handling with user-friendly messages
 - Rate markup calculation (0.5%)
 
