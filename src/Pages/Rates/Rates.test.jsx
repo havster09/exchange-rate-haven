@@ -81,7 +81,7 @@ describe('Rates Component', () => {
 
   it('shows loading state during API calls', async () => {
     fetchRate.mockImplementationOnce(
-      () => new Promise(resolve => setTimeout(() => resolve(1.5), 100))
+      () => new Promise((resolve) => setTimeout(() => resolve(1.5), 100))
     );
 
     render(<Rates />);

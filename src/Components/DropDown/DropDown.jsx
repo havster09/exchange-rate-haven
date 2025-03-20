@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import classes from './DropDown.module.css';
 
-const DropDown = props => {
+const DropDown = (props) => {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
   const buttonId = `dropdown-button-${props.label?.toLowerCase().replace(/\s+/g, '-')}`;
 
   useEffect(() => {
-    const handleCloseDropdownOnClickOutside = event => {
+    const handleCloseDropdownOnClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setOpen(false);
       }
@@ -26,7 +26,7 @@ const DropDown = props => {
     setOpen(!open);
   };
 
-  const handleSelect = key => {
+  const handleSelect = (key) => {
     props.setSelected(key);
     setOpen(false);
   };

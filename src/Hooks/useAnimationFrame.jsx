@@ -1,17 +1,20 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 export const useAnimationFrame = (run, callback) => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
-  const animate = time => {
-    if (previousTimeRef.current != undefined) {
-      const deltaTime = time - previousTimeRef.current;
-      callback(deltaTime);
-    }
-    previousTimeRef.current = time;
-    requestRef.current = requestAnimationFrame(animate);
-  };
+  const animate = useCallback(
+    (time) => {
+      if (previousTimeRef.current != undefined) {
+        const deltaTime = time - previousTimeRef.current;
+        callback(deltaTime);
+      }
+      previousTimeRef.current = time;
+      requestRef.current = requestAnimationFrame(animate);
+    },
+    [callback]
+  );
 
   useEffect(() => {
     if (!run) {
@@ -22,5 +25,5 @@ export const useAnimationFrame = (run, callback) => {
     }
 
     return () => cancelAnimationFrame(requestRef.current);
-  }, [run]);
+  }, [run, animate]);
 };

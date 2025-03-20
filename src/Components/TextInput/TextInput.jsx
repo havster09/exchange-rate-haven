@@ -5,7 +5,7 @@ import classes from './TextInput.module.css';
 const TextInput = ({ value, onChange, label, placeholder, leftIcon, id, className }) => {
   const inputId = id || 'amount-input';
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const value = e.target.value.replace(/[^0-9.]/g, '');
     const decimalCount = (value.match(/\./g) || []).length;
     if (decimalCount > 1) return;

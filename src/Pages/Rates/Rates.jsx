@@ -32,7 +32,7 @@ const Rates = () => {
   const [progression, setProgression] = useState(0);
   const [error, setError] = useState(null);
 
-  const calculateConversion = inputAmount => {
+  const calculateConversion = (inputAmount) => {
     if (!inputAmount || !exchangeRate) {
       return { true: '', marked: '' };
     }
@@ -81,8 +81,8 @@ const Rates = () => {
     }
   };
 
-  useAnimationFrame(!loading, deltaTime => {
-    setProgression(prevProgression => {
+  useAnimationFrame(!loading, (deltaTime) => {
+    setProgression((prevProgression) => {
       if (prevProgression > 0.998) {
         updateRate(fromCurrency, toCurrency);
         return 0;
@@ -118,7 +118,7 @@ const Rates = () => {
                 key: code,
                 icon: <Flag code={code} />,
               }))}
-              setSelected={updatedFromCurrency => {
+              setSelected={(updatedFromCurrency) => {
                 setError(null);
                 dispatch({ type: SET_FROM_CURRENCY, payload: updatedFromCurrency });
                 updateRate(updatedFromCurrency, toCurrency);
@@ -144,7 +144,7 @@ const Rates = () => {
                 key: code,
                 icon: <Flag code={code} />,
               }))}
-              setSelected={updatedToCurrency => {
+              setSelected={(updatedToCurrency) => {
                 setError(null);
                 dispatch({ type: SET_TO_CURRENCY, payload: updatedToCurrency });
                 updateRate(fromCurrency, updatedToCurrency);
@@ -157,7 +157,7 @@ const Rates = () => {
         <div className={classes.amountWrapper}>
           <TextInput
             value={amount}
-            onChange={value => dispatch({ type: SET_AMOUNT, payload: value })}
+            onChange={(value) => dispatch({ type: SET_AMOUNT, payload: value })}
             label="Amount"
             placeholder={`Enter amount in ${countryToCurrency[fromCurrency]}`}
             leftIcon={<Flag code={fromCurrency} />}
