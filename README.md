@@ -113,7 +113,6 @@ npm test
 
 - [ ] Add keyboard navigation support
 - [ ] Currency dropdown keyboard controls
-- [ ] Tab order optimization
 - [ ] Keyboard shortcuts for common actions
 - [ ] Focus management
 
