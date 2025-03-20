@@ -17,16 +17,24 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "prettier"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "no-unused-vars": "warn",
+    "no-extra-parens": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": ["error", {
-      "endOfLine": "auto"
-    }]
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   },
   "settings": {
     "react": {
