@@ -91,6 +91,24 @@ npm start
 npm test
 ```
 
+## TODO / Wishlist
+
+### TypeScript Migration
+
+- [ ] Convert the entire codebase to TypeScript
+- [ ] Add type definitions for all components and hooks
+- [ ] Implement interfaces for API responses
+- [ ] Add strict type checking
+- [ ] Update build configuration for TypeScript
+
+### Enhanced Responsive Design
+
+- [ ] Implement mobile-first approach
+- [ ] Add breakpoints for tablets and larger screens
+- [ ] Improve touch interactions for mobile users
+- [ ] Optimize layout for different screen orientations
+- [ ] Enhance accessibility for all device sizes
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details. 
