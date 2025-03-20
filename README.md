@@ -109,6 +109,14 @@ npm test
 - [ ] Optimize layout for different screen orientations
 - [ ] Enhance accessibility for all device sizes
 
+### Accessibility Improvements
+
+- [ ] Add keyboard navigation support
+- [ ] Currency dropdown keyboard controls
+- [ ] Tab order optimization
+- [ ] Keyboard shortcuts for common actions
+- [ ] Focus management
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details. 
