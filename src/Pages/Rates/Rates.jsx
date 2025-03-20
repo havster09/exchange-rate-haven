@@ -93,19 +93,13 @@ const Rates = () => {
 
   useEffect(() => {
     updateRate(fromCurrency, toCurrency);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fromCurrency, toCurrency]);
 
   return (
     <div className={classes.container}>
       <div className={classes.content}>
         <div className={classes.heading}>Currency Conversion</div>
-
-        {error && (
-          <div className={classes.error}>
-            <h3>{error.title}</h3>
-            <p>{error.detail}</p>
-          </div>
-        )}
 
         <div className={classes.rowWrapper}>
           <div>
@@ -191,6 +185,13 @@ const Rates = () => {
         {loading && (
           <div className={classes.loaderWrapper}>
             <Loader width={'25px'} height={'25px'} />
+          </div>
+        )}
+
+        {error && (
+          <div className={classes.error}>
+            <h3>{error.title}</h3>
+            <p>{error.detail}</p>
           </div>
         )}
       </div>
